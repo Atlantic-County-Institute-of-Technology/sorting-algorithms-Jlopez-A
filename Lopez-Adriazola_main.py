@@ -1,16 +1,33 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+import random
+import os
+from bubble_sort import bubble_sort
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+numbers = [random.randint(1,100) for i in range(10)]
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+def main_menu():
+    print(
+        "[-] 0.Exit \n"
+        "[-] 1.Add apples to count \n"
+        "[-] 2.Make items \n"
+        "[-] 3.reset your food and apples")
+    try:
+        # user inputs option #
+        selection = int(input("please select an option:"))
+        os.system('cls' if os.name == 'nt' else 'clear')
+    except:
+        print("invalid")
+        main_menu()
+
+
+main_menu()
+
+
+# print(numbers)
+# #
+# # outer_pass = 0
+# # inner_pass = 0
+# #
+# print(f"sorted values {bubble_sort(numbers)}")
