@@ -2,7 +2,8 @@
 import random
 import os
 from bubble_sort import bubble_sort
-
+from insertion_sort import insertion_sort
+# from selection_sort import selection_sort
 
 numbers = [random.randint(1,100) for i in range(10)]
 
@@ -10,9 +11,9 @@ numbers = [random.randint(1,100) for i in range(10)]
 def main_menu():
     print(
         "[-] 0.Exit \n"
-        "[-] 1.Add apples to count \n"
-        "[-] 2.Make items \n"
-        "[-] 3.reset your food and apples")
+        "[-] 1.Bubble sort \n"
+        "[-] 2.Insertion sort \n"
+        "[-] 3.Selection sort")
     try:
         # user inputs option #
         selection = int(input("please select an option:"))
@@ -21,6 +22,13 @@ def main_menu():
         print("invalid")
         main_menu()
 
+    if selection == 1:
+        print(numbers)
+        print(bubble_sort(numbers))
+    elif selection == 2:
+        print(numbers)
+        print(insertion_sort(numbers))
+    # elif selection == 3:
 
 main_menu()
 
