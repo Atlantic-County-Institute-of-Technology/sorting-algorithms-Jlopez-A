@@ -1,5 +1,3 @@
-
-
 def bubble_sort(values):
 
     # from main import outer_pass, inner_pass
