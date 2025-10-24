@@ -5,11 +5,11 @@ from bubble_sort import bubble_sort
 from insertion_sort import insertion_sort
 from selection_sort import selection_sort
 
-
+# Lets users pick how they want their list sorted
 def options(x,y,z):
     numbers = [random.randint(x,y) for i in range(z)]
     print(
-        "[-] 0.Exit \n"
+        "[-] 0.Back \n"
         "[-] 1.Bubble sort \n"
         "[-] 2.Insertion sort \n"
         "[-] 3.Selection sort")
@@ -28,22 +28,31 @@ def options(x,y,z):
             print(numbers)
             print(selection_sort(numbers))
     except:
+        os.system('cls' if os.name == 'nt' else 'clear')
         print("invalid")
 
 
 
 
 def main_menu():
-    try:
-        find_range = int(input("howmany numbers:"))
-        find_max = int(input("highest number:"))
-        find_min = int(input("lowest number:"))
-        options(find_min,find_max,find_range)
 
-    except:
-        print("invalid")
-    main_menu()
+    while True:
+        try:
+            # allows the user to choose the range,max number, min number for the list
+            find_range = int(input("how many numbers do you want in your sort? :"))
+            find_max = int(input("whats the highest number you'd like? :"))
+            find_min = int(input("whats the lowest number you'd like? :"))
+            os.system('cls' if os.name == 'nt' else 'clear')
+            # makes it so no negative number can be chosen
+            if find_range > -1:
+                options(find_min,find_max,find_range)
 
+            else:
+                print("range needs to be a positive number")
+
+        except:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print("invalid input")
 
 
 main_menu()
