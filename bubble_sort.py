@@ -1,5 +1,4 @@
 def bubble_sort(values):
-
     # from main import outer_pass, inner_pass
     outer_pass =0
     inner_pass= 0
@@ -15,5 +14,6 @@ def bubble_sort(values):
                 # temp = values[j]
                 # values[j] = values[j+1]
                 # values[j+1] = temp
-    return values
+    loopnsort = f"# of actions {inner_pass}, number of loops {outer_pass}"
+    return values, loopnsort
 
